@@ -1,0 +1,35 @@
+
+server:
+  port: 8988
+  servlet:
+    context-path: /education
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/t_use
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  servlet:
+    multipart:
+      max-request-size: 20MB
+      file-size-threshold: 20MB
+  redis:
+    database: 0
+    host: 192.168.91.131
+    port: 6379
+  jackson:
+    date-format: "yyyy-MM-dd HH:MM:ss"
+  web:
+    resources:
+      static-locations: file:${upload.dir}
+
+
+mybatis:
+  mapper-locations: classpath:com/baizhi/zzy/mapper/*DaoImpl.xml
+  type-aliases-package: com.baizhi.zzy.entity
+
+upload.dir: C:\vue\education-client-master\static\image
+
+
